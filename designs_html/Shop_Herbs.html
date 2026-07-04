@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop | GreenCure Pharmacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#00201a",
+                    "on-primary-container": "#86af99",
+                    "surface-container-high": "#ebe8e3",
+                    "outline-variant": "#c1c8c2",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#002113",
+                    "on-primary-fixed": "#002114",
+                    "secondary-fixed": "#c1ebdf",
+                    "on-secondary-fixed-variant": "#274e45",
+                    "surface-dim": "#dcdad5",
+                    "surface-container-highest": "#e5e2dd",
+                    "secondary": "#3f665c",
+                    "tertiary-fixed": "#b0f1cc",
+                    "primary-fixed": "#c1ecd4",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fcf9f4",
+                    "tertiary-fixed-dim": "#94d4b1",
+                    "on-secondary-container": "#436a60",
+                    "on-primary": "#ffffff",
+                    "primary": "#012d1d",
+                    "inverse-primary": "#a5d0b9",
+                    "secondary-container": "#bee8dc",
+                    "surface-container-low": "#f6f3ee",
+                    "on-surface": "#1c1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#74b392",
+                    "on-background": "#1c1c19",
+                    "surface-tint": "#3f6653",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1b4332",
+                    "inverse-surface": "#31302d",
+                    "tertiary": "#002d1b",
+                    "secondary-fixed-dim": "#a6cfc3",
+                    "background": "#fcf9f4",
+                    "outline": "#717973",
+                    "surface-container": "#f0ede9",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#0c5136",
+                    "tertiary-container": "#00452d",
+                    "surface-variant": "#e5e2dd",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#414844"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .botanical-shadow {
+            box-shadow: 0 12px 32px -4px rgba(28, 28, 25, 0.06);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fcf9f4; }
+        ::-webkit-scrollbar-thumb { background: #3f665c; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#FCF9F4]/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tight text-[#012D1D] dark:text-emerald-50 font-headline">GreenCure</span>
+<nav class="hidden md:flex items-center gap-8 font-headline font-medium text-sm">
+<a class="text-[#3F665C] dark:text-emerald-300 hover:text-[#012D1D] dark:hover:text-emerald-100 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Home</a>
+<a class="text-[#012D1D] dark:text-emerald-400 border-b-2 border-[#012D1D] dark:border-emerald-400 pb-1" href="#">Shop</a>
+<a class="text-[#3F665C] dark:text-emerald-300 hover:text-[#012D1D] dark:hover:text-emerald-100 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Categories</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden sm:block">
+<input class="bg-surface-container border-none focus:ring-1 focus:ring-primary rounded-full px-5 py-2 w-64 text-sm transition-all duration-300" placeholder="Search botanical remedies..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-secondary text-lg">search</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[#012D1D] hover:bg-surface-container rounded-full transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-[#012D1D] hover:bg-surface-container rounded-full transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 max-w-7xl mx-auto px-8">
+<!-- Breadcrumbs & Header -->
+<div class="mb-12">
+<nav class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-secondary mb-4">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary font-bold">Shop</span>
+</nav>
+<h1 class="text-5xl font-headline font-bold text-primary tracking-tight leading-none">Curated Botanical <span class="text-secondary italic font-light">Remedies</span></h1>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="lg:w-64 flex-shrink-0 space-y-10">
+<!-- Categories -->
+<div>
+<h3 class="font-headline font-bold text-primary text-lg mb-6">Categories</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-primary font-medium">All Remedies</span>
+<span class="text-xs bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full">48</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer text-secondary hover:text-primary transition-colors">
+<span>Immunity Boosters</span>
+<span class="text-xs bg-surface-container text-secondary px-2 py-0.5 rounded-full">12</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer text-secondary hover:text-primary transition-colors">
+<span>Digestive Health</span>
+<span class="text-xs bg-surface-container text-secondary px-2 py-0.5 rounded-full">9</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer text-secondary hover:text-primary transition-colors">
+<span>Sleep &amp; Calm</span>
+<span class="text-xs bg-surface-container text-secondary px-2 py-0.5 rounded-full">15</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer text-secondary hover:text-primary transition-colors">
+<span>Energy &amp; Focus</span>
+<span class="text-xs bg-surface-container text-secondary px-2 py-0.5 rounded-full">12</span>
+</li>
+</ul>
+</div>
+<!-- Price Range -->
+<div>
+<h3 class="font-headline font-bold text-primary text-lg mb-6">Price Range</h3>
+<div class="space-y-4">
+<input class="w-full accent-primary h-1 bg-surface-container-highest rounded-full appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between text-xs font-label text-secondary">
+<span>$0</span>
+<span>$250+</span>
+</div>
+</div>
+</div>
+<!-- Ratings -->
+<div>
+<h3 class="font-headline font-bold text-primary text-lg mb-6">Patient Rating</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary-container border-outline-variant" type="checkbox"/>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary-container border-outline-variant" type="checkbox"/>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs text-secondary font-label">&amp; Up</span>
+</label>
+</div>
+</div>
+<!-- Promo Card -->
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-6 text-white botanical-shadow">
+<div class="relative z-10">
+<p class="text-xs font-label uppercase tracking-widest mb-2 opacity-80">Subscription</p>
+<h4 class="font-headline font-bold text-xl mb-4">Save 20% on Monthly Refills</h4>
+<button class="bg-surface-bright text-primary px-4 py-2 rounded-full text-xs font-bold transition-transform hover:scale-105">Learn More</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-8xl">potted_plant</span>
+</div>
+</div>
+</aside>
+<!-- Main Product Grid -->
+<div class="flex-1">
+<div class="flex justify-between items-center mb-8">
+<p class="text-secondary text-sm">Showing <span class="text-primary font-bold">12</span> of 48 products</p>
+<div class="flex items-center gap-4">
+<span class="text-sm text-secondary">Sort by:</span>
+<select class="bg-transparent border-none text-primary font-bold focus:ring-0 cursor-pointer">
+<option>Best Selling</option>
+<option>Newest Arrival</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Botanical Tea" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of premium dried herbal tea leaves in a minimalist glass jar on a warm wooden surface with soft bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUw2d_SwvlUsAyCl4GJs4mVVPo0VWn4lpHxXG6oe2xSZXTuhliVedzZO04faQQbvUBBYtwJx7lmNdZCn_JxywdTpv7s-hXvOEFs-p5vjT90g_PDkSBivTmazAFXHuNLT12RTsCV_UowXqXBKd01Ge4K4JNpnNe7Qo6xtbfgFX3aB4uHrVW8-j05q5fd6saP4r5pkB6yPk_hhd5FqXkEC732aj273HDeE0eMCSSmYDulkPNYRL0cTmVFlOEbD6_gJGxPe7EdDSEoi4"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter text-primary">Organic</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Wild Elderberry Elixir</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Powerful antioxidant support for seasonal immunity and respiratory wellness.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$34.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Herbal Oil" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sleek dark glass dropper bottle containing golden botanical oil, placed among fresh green leaves on a cream surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAELzZp4wQ7o6neiS9lMgvLXQan5rW6t2Z7dJwM-YS_5sN7l_XRLk8iLOxGP9wEnPgJKCId2oLhZajPGocZORKHzl0Hb4y_PZiT2hR84H3ha56Mfg4PDqX6tPPol3kIhvBiS1f106jJ_M4xWKPvOLWZahDh9WkVDBF2pq7EgcnQSBbE97ESiuoRb9om1R6d5fhR3uET3fw-D_8ZbSJNFzfzU3LvRDSZfhQ0QZ9MfYg1cNBZ7-iCP3jcT8auAEOyq40q7nVk25G4eTo"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter text-primary">Best Seller</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Nordic Calm Tincture</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Ethically sourced Valerian root blend designed to restore natural sleep rhythms.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$28.50</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Healing Balm" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Artisanal herbal salve in a tin container with pressed flowers on top, aesthetic minimalist studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7XAhYvHQnaEC2xF_OeatKYFTBlWADYghAHADip7tId41a-PL3zvSI2YNPzB9rsNS9yw8gAJSg7SmZa_mB15Lt8Qt4WkE9rKajGQC8ziY4H6AsJ51eJUhT1ektYJmcJ0MgsjMzXBO9SPVGVIatagTtC3HgU2_lQmr7V5ebza6IBXcjXIUiOguXMQEKC3P9TOJreDqfxLctJrJRLTWOfnfb7irQmCvz_c-QIqUO7yqm8e4yJTyaf5uSFsFgisYSTNxUSSb4Tv5iOSE"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Calendula Skin Salve</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Hand-pressed floral botanicals for soothing skin irritation and deep hydration.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$22.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Digestive Tea" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern tea canisters with elegant minimalist labels on a clean white kitchen counter with bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqI4c_iibODyKMlEXy48Li1iUi-P6BisOzQ4hUVhAaqsNur0ozFESwe-sNhQ_moqgQIum5Y0rP4JrM0Y1ur3mrxCVeRf7GZeSGgqYOeBJlZbJkKfvLiQ4dA3tPkqgxAmWKClwQv7DohN2RyyOyF9_XHu7CBMFNpzyThctL6qLexDASLmIBzVOmzkXD_Sks2Bwkdes4GEOsEA6lL9fADE9fhLfj35tnIg-m08XrkWELcMRyiMWoHUXnzLGT5nlJymObBvFQgeW6a64"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Ginger &amp; Mint Digest</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Gentle digestive support with cooling organic mint and warming ginger root.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$19.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Supplements" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Luxury amber glass supplement bottle with high-end typography label on a pedestal of natural rock" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8GN8KkOhN_TYcKKyqqB0ddqnEdIFIaMAdKama2UU64v_oCVnaAcnvsVyqf99kJoOQZEd6qQedB1dDZBxRxoA7c6DN4wyohYqPnEhqIhTVjL9Me2lyQn1hAA4Y5y-pM3YCLcXbMXCsUsIo71n7Nk0tm4j3VufqF5icmeSbvAsVdukXOAwupNMU_6hgp60MkBDzDnXvDPqegrJDBRfQq6_Hy5z0kyo5xxCPJNFSdYKxl_zuDMfX3OMPNZw2Oa-pwH1LcHFUSt-0fts"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Lion's Mane Focus</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Nootropic mushroom complex for mental clarity and cognitive performance.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$45.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Rose Water" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Glass bottle of botanical toner reflecting in a mirror with fresh pink rose petals around it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1NlrxPWMyNhLN2mJcOjYz5F_Vuhq39yhmfun0uIN_m7HgqXEbUM9S1nHqruiPXQkMU4MBkdJZ5D-JKsvBZIITI6bMOua-W_nOrl_lDOiDt_LGuaMx3W1kOBVsCA2ZZ22zvyqGNhvr6B4m6FixaxyEofd5RahjSVYOKXx4BBXvnByN9Sd6uEMIdfQrRL-dTZ4RkPDzzo3o_9Z4-veTqNP_m3kIiA4SS1wWzBsPSO0ct58qLbC4oeZ_AHdEZRyNnlFI_mwf6bkauPc"/>
+<span class="absolute top-3 left-3 bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">New</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Aromatic Rose Mist</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Pure steam-distilled damask rose water for hydration and emotional balance.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$26.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Herb Bundle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Dried lavender and eucalyptus bundles tied with twine on a vintage linen cloth, morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBINPD4ty5r-PdNl0lhYQfCpubaZByb7XzOOJAf9im8mOywI2ffVhBOcEkiesYneH2_cSTpuKlGIeAOfaJotSG-llkAue77NfJfk5t84NoLe1Og6SXC7B-rhCAlOj-cp-ecpqHf7UG1JiYN5NzWwbowdhtexR6EqWe3MefBBQHAVvHPc-A-0925VpiQBJFvGgBeEqh5UV_o8xyDJunnpsFaLMRdrXbpbbgZxKoSxy-ArE15-3Bzj6bfFllSDK51E_uff0wL9-r-bC0"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Botanical Smoke Cleanser</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Artisan-crafted bundles of wild sage and cedar for home ritual and purification.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$15.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Vitamins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Soft aesthetic shot of multi-vitamins in a ceramic bowl with shadows of palm leaves over them" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC413y3t9nLqL4cFUU4wqhghQlFx5oqy5H2Tn-5K2Ihc4D5xG3jf6NIWBhBHwjFdD-tTVxLBquZHDNHMhs7pc0-MtsqnxwMwXaKgGmmEedp6dhxbQaWK2UufpWDN5Tjts83Pc7mF7l42E1IK4UdO3tEVCFATrjAqlMcjBZ9GV_mVCzGmsNJkpFwN0-DmVZ_kpYye2phM5rbGh0gt0O-l_eZa6ebqtXr_zW5nJ9FoGw9-Y1SB2M1w_c96Ft4NEVg3gtcVXhuNBuaEjo"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Essential Whole-Food Multi</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Bioavailable vitamins derived from kale, spinach, and broccoli extracts.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$39.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Product Card 9 -->
+<div class="group relative bg-surface-container-lowest rounded-xl botanical-shadow p-6 transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low flex items-center justify-center relative">
+<img alt="Matcha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="High-quality matcha powder in a black bowl with a bamboo whisk, moody botanical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqxldErlrmGJyxQAgMacdWIIxrQBHP7WYEir0afD1Zye-MX9PyXXdoDH8V3nFwu-8PWl79gbfvpNYssuCz1cRo_AWCsGAjIR49oqBi59VuG7LrlgqPqyf--CGRKvWwrC6vD1kNxJL-x6GuJ9o1Dc4wFAR_bTSlcPoZiMDEvcFGayvrjn5vgEOYaausF87BYTmxxw2w-0y0If9--Doyik4-ZjiAOjpVVHNP9-bRO3gDzTBBFvYOKljU68s8Zhk1cZR_dp0jEYuqC2E"/>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Ceremonial Grade Matcha</h3>
+<p class="text-secondary text-sm mb-4 leading-relaxed line-clamp-2">Shade-grown tencha leaves ground to a fine powder for sustained energy without the crash.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-headline font-bold text-primary">$42.00</span>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center">
+<nav class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors">3</button>
+<span class="px-2 text-secondary">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors">8</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F0EDE9] dark:bg-emerald-950 w-full pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<span class="font-headline font-bold text-lg text-[#012D1D] dark:text-emerald-50">GreenCure</span>
+<p class="text-[#3F665C] dark:text-emerald-400 font-body text-sm leading-relaxed">Redefining modern wellness through the lens of ancient botanical wisdom and clinical precision.</p>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-6">Collections</h4>
+<ul class="space-y-3 text-[#3F665C] dark:text-emerald-400 text-sm">
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Essential Oils</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Healing Teas</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Raw Supplements</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Skincare Apothecary</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-6">Support</h4>
+<ul class="space-y-3 text-[#3F665C] dark:text-emerald-400 text-sm">
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Shipping</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Returns</a></li>
+<li><a class="hover:text-[#012D1D] dark:hover:text-emerald-100 transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-6">Newsletter</h4>
+<p class="text-xs text-secondary mb-4">Join our botanical journal for seasonal health guides.</p>
+<div class="flex items-center border-b border-primary/20 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full p-0" placeholder="email@address.com" type="email"/>
+<button class="text-primary"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-[#3F665C] dark:text-emerald-400 text-sm">© 2024 GreenCure Pharmacy. Ethically Sourced.</span>
+<div class="flex gap-6">
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">social_leaderboard</span></a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#c1ecd4",
+                    "surface-tint": "#3f6653",
+                    "on-tertiary-fixed": "#002113",
+                    "primary-container": "#1b4332",
+                    "surface-dim": "#dcdad5",
+                    "outline-variant": "#c1c8c2",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1c19",
+                    "surface-container-highest": "#e5e2dd",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-container": "#436a60",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002114",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#94d4b1",
+                    "on-tertiary-container": "#74b392",
+                    "secondary-container": "#bee8dc",
+                    "secondary-fixed": "#c1ebdf",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0ede9",
+                    "outline": "#717973",
+                    "on-surface-variant": "#414844",
+                    "surface-container-low": "#f6f3ee",
+                    "surface-container-high": "#ebe8e3",
+                    "on-secondary-fixed": "#00201a",
+                    "secondary": "#3f665c",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "tertiary": "#002d1b",
+                    "on-surface": "#1c1c19",
+                    "inverse-on-surface": "#f3f0eb",
+                    "inverse-surface": "#31302d",
+                    "surface-bright": "#fcf9f4",
+                    "secondary-fixed-dim": "#a6cfc3",
+                    "surface": "#fcf9f4",
+                    "error": "#ba1a1a",
+                    "primary": "#012d1d",
+                    "on-secondary-fixed-variant": "#274e45",
+                    "on-primary-container": "#86af99",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#b0f1cc",
+                    "tertiary-container": "#00452d",
+                    "on-tertiary-fixed-variant": "#0c5136",
+                    "background": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FCF9F4;
+            color: #1C1C19;
+            font-family: 'Inter', sans-serif;
+        }
+        .botanical-shadow {
+            box-shadow: 0 12px 32px -4px rgba(28, 28, 25, 0.06);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background-color: rgba(252, 249, 244, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-sm no-border">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto font-['Plus_Jakarta_Sans'] tracking-tight">
+<div class="text-2xl font-bold text-emerald-900 dark:text-emerald-50 tracking-tighter">GreenCure</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors" href="#">Home</a>
+<a class="text-emerald-900 dark:text-emerald-50 font-semibold border-b-2 border-emerald-900 dark:border-emerald-50 pb-1" href="#">Shop</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors" href="#">Apothecary</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/50 rounded-full transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-50">search</span>
+</button>
+<button class="p-2 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/50 rounded-full transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-50">shopping_bag</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity">
+                    Consult Expert
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<div class="max-w-[1600px] mx-auto px-8 lg:px-12 flex gap-12">
+<!-- Sidebar Filters -->
+<aside class="hidden lg:block w-72 flex-shrink-0 space-y-10">
+<div class="space-y-6">
+<h3 class="text-sm font-bold tracking-widest text-on-surface uppercase opacity-50">Category</h3>
+<ul class="space-y-3 font-body">
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="rounded-sm border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">Immunity</span></label></li>
+<li><label class="flex items-center gap-3 cursor-pointer group"><input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/><span class="text-primary font-medium">Stress Relief</span></label></li>
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="rounded-sm border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">Digestion</span></label></li>
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="rounded-sm border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">Botanical Beauty</span></label></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h3 class="text-sm font-bold tracking-widest text-on-surface uppercase opacity-50">Sourcing Region</h3>
+<ul class="space-y-3 font-body">
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="border-outline-variant text-primary focus:ring-primary h-4 w-4" name="region" type="radio"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">North West Highlands</span></label></li>
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="border-outline-variant text-primary focus:ring-primary h-4 w-4" name="region" type="radio"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">West Region</span></label></li>
+<li><label class="flex items-center gap-3 cursor-pointer group"><input class="border-outline-variant text-primary focus:ring-primary h-4 w-4" name="region" type="radio"/><span class="text-on-surface-variant group-hover:text-primary transition-colors">South Forest Basin</span></label></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h3 class="text-sm font-bold tracking-widest text-on-surface uppercase opacity-50">Herb Type</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-semibold">Dried Flowers</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-secondary-container transition-colors cursor-pointer">Elixirs</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-secondary-container transition-colors cursor-pointer">Powders</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold hover:bg-secondary-container transition-colors cursor-pointer">Ointments</span>
+</div>
+</div>
+<div class="pt-8 p-6 bg-surface-container-low rounded-xl">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        Every botanical in our shop is ethically sourced from Cameroonian family farms. 
+                        <a class="underline font-medium text-primary" href="#">Learn about our heritage.</a>
+</p>
+</div>
+</aside>
+<!-- Product Canvas -->
+<section class="flex-grow">
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h1 class="text-5xl font-headline font-bold text-primary tracking-tight mb-2">The Apothecary</h1>
+<p class="text-on-surface-variant max-w-lg">Hand-picked remedies, scientifically verified and ethically harvested from the heart of the tropics.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-on-surface-variant">Showing 24 products</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-semibold text-primary cursor-pointer">
+<option>Latest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Most Potent</option>
+</select>
+</div>
+</header>
+<!-- Product Grid (Asymmetric Feel) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of dried dark purple elderberries in a glass apothecary jar on a textured cream surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7e2nxbQhrSOQP-FI5D94cuBdwAaCX3PJjS9YOD5HN70BWIhKJWk2CNV5KYxv0m2vV_BXUNg1qeXNPhyn8V-aZyYfXGFAES0pSg-lLodyhFFIMl-TaRtaAYokZs3RCPVUum0gJaH5KHDegQqS2uKabWLzE_M70LX9AsclFN4bzVzhLRDzGPTqhEcCoOaeaEL5N-tgl8ccJ4nmGXmbT_tCAQ1SEDOwfCn7gdrk7SdZ2VJq74y7OYtxYp2tKaHIKOyDNvD77WW6dZA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">High Potency</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Wild Highland Elderberry</h3>
+<p class="text-sm text-on-surface-variant font-body">Immunity Support • North West</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 8,500</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+<!-- Product Card 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Lush fresh green Holy Basil leaves with morning dew drops on a dark forest background, high-end botanical photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9SwLMl2kkL3gYSp1elpLtYt3xK4N3es2XI1hZUqyLPYhN7e57pcZxorQwtVePNOSVlADO46WU0z60ejb8IMm8kRvQhO5H--jgXVorvm_ZU__tDJfTagaht3L_uJNeD7AikSBKeIUS8zsKmciobZgTGpqNyFXXiZLFVXkNTRAQKAo6cFGcMUb2Rs45hXR1VZ8aQZJBw-CJSjfGfxq5zVBkT6RVpwDNhhF7ck4ULq-iMNSVhErgN8zY9eN0VpfcBAlT5b-xXvaI9mo"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Fresh Harvest</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Holy Basil (Tulsi)</h3>
+<p class="text-sm text-on-surface-variant font-body">Stress Adaptogen • West Region</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 5,200</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+<!-- Product Card 3 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant glass dropper bottle with deep red hibiscus oil against a minimal cream background with organic botanical shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ypBt_DIveEQPezild8MYIBjPKUyizklve2ev8RtGITAdpgjCFPNyuadw__w9uR8W_OSmSYG00XQkML_UilCOzNT8fox03-V5pt6foptTm01kLps9IyHg2hU5d8o9SlArMUATS_2LDVjm1R4MgtYTyCLVIyMHtL1lp6gMeby9Wa68UQCQe-FgwutQN7tFt_Wrzp1-4i9dpag8ReN1hp6mDTPIqRqlZaAIwn6ScRi1qwOANrzSOKS_vEWHS0OL3o0I3IUX0LOi8Os"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Limited Edition</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Hibiscus Glow Serum</h3>
+<p class="text-sm text-on-surface-variant font-body">Botanical Beauty • South Forest</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 12,000</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+<!-- Product Card 4 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Crushed raw ginger and turmeric roots on a stone slab, bright overhead lighting, vibrant earthy colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX1aHHZzLMSn861kl5wnTli2p0fmH1qP4CoanMFEwuseHCqR00Wek2nqx1heCRxsocFLK4YdG1XIBHCqC4HSnfUPl6jV-EH6mZl_Dmqfb-S-pl0oqsLrwjyWFgVIauFnbkA-qv-LdDpz4sdFlAh8LyLxbv57-IdlGMIkrmNpLmvNW_ybKHFvCcZxgvTVv4_mlIjhEYcCfLKvVcEzGM3IkW9oAMliKxWHCuWjTvmE9iQmWWcICFwrvf1RBoBW1XHS31u6PFZbXKEV0"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Fire Ginger Root</h3>
+<p class="text-sm text-on-surface-variant font-body">Digestion &amp; Warming • North West</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 3,400</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+<!-- Product Card 5 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Handcrafted mortar and pestle with fresh green herbs and crushed seeds on a rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4g2GPBXAcGj_KkHt6HZY_aT_0DsSc_pFAF3VNc2aQwrq3X5w1pTJgC5gVLFHvslg_CjSxD_ZY51KQZqMjPL4Phm3LxmB8XwHJ6eyv9gWtStky1KOyBCJdK5B915bOV7GYoFFU8bZHzzpgceWlLplnw9Uvwny9XhMcBIPtYq7IvjcS3SCIIkATRoUFBcdSUQKeMw2-Ju2BJZjj5hAhnBhiSf9Sm_AalLA942DD1H4CzIsx87g3IfAjIyVTTkzcZ1StcKYXhYQlKSY"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Ancient Forest Mix</h3>
+<p class="text-sm text-on-surface-variant font-body">General Wellness • South Forest</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 9,800</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+<!-- Product Card 6 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 botanical-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Bright yellow Moringa powder in a minimal ceramic bowl, scattered dried moringa leaves, bright airy daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-kaPpSlWcaKE48i4ZZfqp-f52LLfGuxLGM318OlZ7l3Tc5GKp52ocMlZDydZgj-IHMzcYU15nTyEGFxRsa0dPS10K9soEX3084u_-j-fqyblN5lqzMvBwl4j2A8v7y79ePjpvD3NB3Wpj-rjtzn4pRt8XXn3FYmKJI6LnpEjQJXgWsyFSWTEUZL49mfJcUlkU0mKzpq2A5uKyg_3EzNNnhjx5Bxr_AXztto4T9Df_zmHjqp-D6d1ywfsC1lQlFhqUL7d9-FoEXrs"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Moringa Vitality Powder</h3>
+<p class="text-sm text-on-surface-variant font-body">Superfood • Far North</p>
+</div>
+<span class="font-headline font-bold text-lg">FCFA 6,500</span>
+</div>
+<button class="mt-6 w-full py-4 rounded-full border border-primary/10 bg-surface-container-lowest text-primary font-bold text-sm tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Bag
+                        </button>
+</div>
+</div>
+<div class="mt-20 flex justify-center">
+<button class="px-12 py-4 bg-primary text-on-primary rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:shadow-xl transition-all">
+                        Load More Botanicals
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-emerald-950 w-full pt-16 pb-8 transition-colors duration-500 font-['Inter'] leading-relaxed">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-bold text-emerald-900 dark:text-emerald-100">GreenCure</div>
+<p class="text-emerald-800/80 dark:text-emerald-200/80 text-sm">Bridging ancestral wisdom and modern wellness through ethically sourced Cameroonian botanicals.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">camera</span>
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">eco</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-emerald-900 dark:text-emerald-50 font-bold">Discover</h4>
+<ul class="space-y-2">
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Sustainability</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Ethical Sourcing</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Heritage Story</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-emerald-900 dark:text-emerald-50 font-bold">Services</h4>
+<ul class="space-y-2">
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Pharmacist Consultation</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 transition-colors" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-emerald-900 dark:text-emerald-50 font-bold">Join the Circle</h4>
+<p class="text-xs text-emerald-800/80 dark:text-emerald-200/80">Subscribe for botanical insights and exclusive first-harvest releases.</p>
+<div class="relative flex">
+<input class="w-full bg-white dark:bg-emerald-900 border-none rounded-full px-4 py-2 text-sm focus:ring-1 focus:ring-emerald-500" placeholder="Email Address" type="email"/>
+<button class="absolute right-1 top-1 bg-emerald-900 text-white rounded-full p-1"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-emerald-900/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-emerald-800/80 dark:text-emerald-200/80">© 2024 GreenCure Cameroon. Ethically Sourced Botanical Excellence.</p>
+<div class="flex gap-6 text-xs text-emerald-800/60">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

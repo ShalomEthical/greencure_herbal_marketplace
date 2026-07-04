@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreenCure | Botanical Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#c1ecd4",
+                      "surface-tint": "#3f6653",
+                      "on-tertiary-fixed": "#002113",
+                      "primary-container": "#1b4332",
+                      "surface-dim": "#dcdad5",
+                      "outline-variant": "#c1c8c2",
+                      "on-primary-fixed-variant": "#274e3d",
+                      "on-error": "#ffffff",
+                      "on-background": "#1c1c19",
+                      "surface-container-highest": "#e5e2dd",
+                      "inverse-primary": "#a5d0b9",
+                      "surface-variant": "#e5e2dd",
+                      "on-secondary-container": "#436a60",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#002114",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#94d4b1",
+                      "on-tertiary-container": "#74b392",
+                      "secondary-container": "#bee8dc",
+                      "secondary-fixed": "#c1ebdf",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f0ede9",
+                      "outline": "#717973",
+                      "on-surface-variant": "#414844",
+                      "surface-container-low": "#f6f3ee",
+                      "surface-container-high": "#ebe8e3",
+                      "on-secondary-fixed": "#00201a",
+                      "secondary": "#3f665c",
+                      "primary-fixed-dim": "#a5d0b9",
+                      "tertiary": "#002d1b",
+                      "on-surface": "#1c1c19",
+                      "inverse-on-surface": "#f3f0eb",
+                      "inverse-surface": "#31302d",
+                      "surface-bright": "#fcf9f4",
+                      "secondary-fixed-dim": "#a6cfc3",
+                      "surface": "#fcf9f4",
+                      "error": "#ba1a1a",
+                      "primary": "#012d1d",
+                      "on-secondary-fixed-variant": "#274e45",
+                      "on-primary-container": "#86af99",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#b0f1cc",
+                      "tertiary-container": "#00452d",
+                      "on-tertiary-fixed-variant": "#0c5136",
+                      "background": "#fcf9f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f4; color: #1c1c19; }
+        h1, h2, h3, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .botanical-shadow { box-shadow: 0 12px 32px -4px rgba(28, 28, 25, 0.06); }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-bold text-emerald-900 dark:text-emerald-50 tracking-tighter font-headline">GreenCure</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="text-emerald-900 dark:text-emerald-50 font-semibold border-b-2 border-emerald-900 dark:border-emerald-50 pb-1 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Home</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Shop</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors font-['Plus_Jakarta_Sans'] tracking-tight" href="#">About</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Contact Us</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2">
+<a class="text-primary hover:text-primary-container px-4 py-2 text-sm font-semibold transition-colors" href="{{DATA:SCREEN:SCREEN_15}}">Login</a>
+<a class="bg-primary text-on-primary px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-container transition-all" href="{{DATA:SCREEN:SCREEN_21}}">Sign Up</a>
+</div>
+<button class="p-2 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/50 rounded-full transition-all">
+<span class="material-symbols-outlined text-emerald-900">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section: The Digital Greenhouse -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Botanical Laboratory" class="w-full h-full object-cover" data-alt="High-quality close up of a botanical research laboratory setting with glass beakers, fresh Cameroonian herbs like Fever Grass and Bitter Leaf, soft warm studio lighting, 8k resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmfK_IR8YN5ozJjHReaptaU_Bd6w9HwTIJnFjyRaBoinYKs1_nvcymh7rqvZjnBFI8j-4iQB0SWGhsYVZ12jfDTmtFIC5hKA7AqVbZhU5r2LMJUefUPUXSsZhju7lqjHXp0PaSekZa8UZcKUAI9fQffyHj0yfhxk734-G0rT9FAosPpruzt4RgH86n4GN3AG6ox1TNATmfVXfTU3KsC_GTQkG7h4cQ1KCxJ_c1bLwxgaxFe-7tV7LD1ZlCCtt655RHZ9QpnwO9Gec"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="text-white space-y-8">
+<span class="inline-block px-4 py-1.5 bg-secondary-fixed/20 backdrop-blur-md rounded-full text-xs font-bold tracking-widest uppercase border border-white/10">Welcome to your natural sanctuary</span>
+<h1 class="text-5xl lg:text-7xl font-bold font-headline leading-[1.1] tracking-tight">
+                Healing Starts <br/>
+<span class="italic font-light">With a Breath</span> <br/>
+                Of Pure Nature
+            </h1>
+<p class="text-xl text-stone-200 max-w-lg leading-relaxed font-body">
+                We believe your well-being is a conversation between your body and the earth. Discover remedies hand-crafted with love and scientific rigor in the heart of Cameroon.
+            </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-white text-primary px-8 py-4 rounded-full font-bold transition-all hover:scale-105 botanical-shadow">
+                    Start Your Wellness Journey
+                </button>
+<button class="bg-transparent border border-white/30 text-white backdrop-blur-md px-8 py-4 rounded-full font-bold transition-all hover:bg-white/10">
+                    Meet Our Growers
+                </button>
+</div>
+</div>
+<!-- Overlapping Editorial Element -->
+<div class="relative hidden lg:block">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-tertiary/20 rounded-full blur-3xl"></div>
+<div class="relative bg-surface-container-lowest p-6 rounded-3xl botanical-shadow max-w-md ml-auto">
+<img alt="Botanical study" class="w-full h-64 object-cover rounded-2xl mb-6" data-alt="Close-up macro photography of fresh medicinal green leaves with crystalline dew drops, soft high-key studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl70U31ESn_JtIkU27yjTIJX25aYk7UMs2gSy0sY4-z6CFPyoGfORXMJZnebSHYRcdkCdFRxfaDotyPdi2qzWZSkLCSIdqqkmJv6iJyLsHp5t8vhW5A-dZVYFipQtVnHNwciTr5O9hO6yFGWTCtlz-fdb7qkdLxLhrECB80stG8heFxtBIlKlYRzSjJBvmUn9dcuuiMpbAuCx6ug7M3fW9DfiimtA0TJq7x_tKlS6W20jUsAuMdixBJT0kkWUjqeP-pjHK2nAoewY"/>
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-primary font-headline">Rooted in Care</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Every blend we create is a promise of purity. From the rich volcanic soils to your home, we bridge the gap between ancient ritual and daily health.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span>Read Our Philosophy</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- The Healing Heritage of Cameroon -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 space-y-8">
+<h2 class="text-4xl lg:text-5xl font-bold text-primary leading-tight font-headline">The Healing Heritage <br/>of Cameroon</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>For centuries, the Bamenda Highlands have served as a natural pharmacy. GreenCure bridges this gap, bringing the profound healing properties of the African Rainforest to the global stage.</p>
+<p>We work exclusively with 12 traditional cooperatives, ensuring that every tincture and balm supports the conservation of the land and the dignity of its guardians.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div>
+<div class="text-4xl font-bold text-primary mb-1">12</div>
+<div class="text-sm uppercase tracking-widest font-bold text-secondary">Local Cooperatives</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary mb-1">450+</div>
+<div class="text-sm uppercase tracking-widest font-bold text-secondary">Botanical Species</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<img class="w-full h-[400px] object-cover rounded-3xl" data-alt="A portrait of a traditional healer in Cameroon gently holding medicinal herbs with weathered hands, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSdUzpmq-HepplrNUc-DFFYhxrfbQqPaJNDw6rcshUF_zYo7u2BJl-ITnQNEl_0drJVi_Bk92VR7R38VCQK3RGy8_6T00aSmiVkI7QYV-cSXND9O1RpewGA1SQvmr3rlhbFC7HbIr1m9mt-vczqvHZWV9xtuy6RCxrNfBXp_JBg0l-Ggs2GDxLT6lnl5Zxdt1RNR8tFUasfU_9-Hbk67AV5g-JcrYNPAksSyOgcsm9lsUeXN94_piC1Fb9oANREfsr3wJdhVzLOhI"/>
+<div class="bg-surface-container-high p-6 rounded-3xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">auto_awesome</span>
+<p class="text-sm font-medium">Ancestral extraction techniques preserved for modern potency.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-primary p-8 rounded-3xl text-on-primary">
+<h3 class="text-xl font-bold mb-4 font-headline">Highland Harvest</h3>
+<p class="text-sm opacity-80 leading-relaxed">Our plants grow at altitudes above 2,000m, concentrating their active alkaloids in the rich volcanic soil.</p>
+</div>
+<img class="w-full h-[400px] object-cover rounded-3xl" data-alt="Rich dark volcanic soil texture with tiny green sprout and morning dew, high contrast botanical photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSdrOadwPHJC2t82zM3jivZA1LYOkClm1KDIwFK8A01ENwYRP_bQJxTQnCPyVGp4CAJ33zpEfSHKQdfgT0ClDrLtM-4gH1ywdc_dBIuzgaWuHS4H_TKQYqW7CJ_RMHQAzyjd2RUsXWrR_yudhYf0MAt_Tl8jAOGdsjWi4zc_Az1km90pMTtLSFzMMF1ztQ0lrDbZO9orykS3Wbb2b52AIS44iCgyD_fjTjLMgj2piS-BrzwQTM635nX7fnKKsqzdnMBDhQaO514FQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Remedies: Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-xl">
+<span class="text-secondary font-bold tracking-widest text-xs uppercase mb-4 block">Pharmacist Selected</span>
+<h2 class="text-4xl font-bold text-primary font-headline">Featured Remedies</h2>
+</div>
+<a class="flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all" href="#">
+                View All Collections <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Featured Item -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest rounded-[2rem] overflow-hidden botanical-shadow group">
+<div class="relative h-[400px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury amber glass dropper bottle of botanical oil on a stone pedestal surrounded by fresh green ferns and moss" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPwUObItNki3ppF98bJQa_jJ9tVJOiR88KVXDRaEBHn3apuE2PNJYdoMvIss6k5dtBIxagdqVYdbTLinx3cr1ZttfenA2R67UU4kRze_8U1ei7m6M4Ktvo7JFPw37lRsN4smxs1hOp2yl73p4z6NvTxLE-lc5wZZv2n4sGUhfluvTxGeZLTgdV7UKUCjnQ7zzMgD_cvXD1SLc-dlXgUAYDwePSAZPIpNFceqCuHsCKXFaXChz7KwdNWZPCAA0CKqauZUX8ZJOtSpg"/>
+<div class="absolute top-6 left-6">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">New Release</span>
+</div>
+</div>
+<div class="p-10 space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-bold font-headline">Bamenda Bark Tincture</h3>
+<span class="text-xl font-medium text-secondary">€48.00</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">A high-potency infusion for mental clarity and respiratory support, harvested during the rainy season.</p>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold hover:bg-primary-container transition-all">Add to Ritual</button>
+</div>
+</div>
+<!-- Secondary Items -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden botanical-shadow p-6 flex flex-col justify-between group">
+<div class="relative overflow-hidden rounded-2xl mb-4">
+<img class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of golden honey-like herbal salve in a small frosted glass jar with wood lid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaEYvuLCd1dsOL67T8dxdP46G3wh8Gk_9Ci2Blj07zzcpT5Bl8T9vEuT4PGz-9S1YdFNg8EMUWyBkB_r38Ui-deXul7AFeIFrVfF6zyxrc7INCGYz_byDY0qbhSiNx4yR74G3ER-LJxAG76rIi1riUJwZlA0EpabBlHBy4jgiDtZm3Xmo--RwCQHmB-97QGxvagb9ZChRYEI-4kgWphIECG0MpTQeOD9VOueCKO2H8roQYEUpA3_vTMDfp_YVhEXdBl1k9fZ-8FzY"/>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Highland Salve</h4>
+<p class="text-sm text-on-surface-variant mb-4">Soothing botanical balm.</p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-primary">€24.00</span>
+<button class="bg-surface-container-highest p-2 rounded-full hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden botanical-shadow p-6 flex flex-col justify-between group">
+<div class="relative overflow-hidden rounded-2xl mb-4">
+<img class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Dried medicinal tea leaves and flowers spread out on a clean white surface with organic shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuOc5fhYx9hSYcyjUsyMMneuyT1HvEA1Mi4Gd7I65MkdmO_lgZ741Oa41mYBebbT65JEkbXPs4q56Eg5eAwl3nL-tuk7HtimSv0SAL7k0Eeyy5yD7zN98s6Sc5DzUDNGsV7qArDdFfnilGof8kyce4su_5X6fH6jXoZeZ57sh472PPBR5_H70PX8FX07iG7HXHhrjn1V6LYyq_kO-2ApW14RlVmcPlvZM6XllVkGFYG9DjF58gOCgkDo9Pdgq1q2FZiQUhnLW89ok"/>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Mist-Morning Tea</h4>
+<p class="text-sm text-on-surface-variant mb-4">Detoxifying mountain herbs.</p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-primary">€19.00</span>
+<button class="bg-surface-container-highest p-2 rounded-full hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Row wide -->
+<div class="md:col-span-2 bg-primary text-on-primary rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden">
+<div class="z-10 relative">
+<h3 class="text-3xl font-bold font-headline mb-4">Apothecary Membership</h3>
+<p class="opacity-80 max-w-xs mb-8">Join our circle for seasonal harvests, rare blends, and direct consultations with our master pharmacists.</p>
+<button class="px-8 py-3 bg-white text-primary rounded-full font-bold">Join the Circle</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[200px] opacity-10">eco</span>
+</div>
+</div>
+</div>
+</section>
+<!-- From the Source -->
+<section class="py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2 order-2 lg:order-1">
+<div class="relative">
+<img class="w-full aspect-[4/5] object-cover rounded-[3rem]" data-alt="A group of smiling women from a Cameroonian botanical cooperative working together in a sunlit outdoor garden drying herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCka_XqpGN5zIopj3bA08aKJXFYbF27jITIBUQz0hPuxCdmZ89amEfDfQGrtjtt2narkvEMVf4rnZuwwWu7ghVZEjf4qdhmhUNrqtngmWGdV-isXqyLvuDkzayCue5R1n9STMxxnwod0fw_JrVHXFjZ8vIFWsmNet7K4E_Buwj1WsxYdEgP7BlUbRCfljRGgfHMi53DPAXUx5dKFAywCJhmT2cIrV5cTcvch9OwPO2nVgcqCTEGfD0ZOS0FTQJYuq0WKL7DUE70DeE"/>
+<div class="absolute -bottom-8 -right-8 bg-surface-container-lowest p-8 rounded-3xl botanical-shadow max-w-[280px]">
+<p class="text-primary italic font-serif text-lg leading-relaxed">"The forest gives us life, and in return, we protect its secrets for the next generation."</p>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="text-sm font-bold">Mamma Theresa</p>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Cooperative Lead</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 order-1 lg:order-2 space-y-8">
+<span class="text-secondary font-bold tracking-widest text-xs uppercase block">Impact &amp; Origin</span>
+<h2 class="text-4xl lg:text-5xl font-bold text-primary font-headline leading-tight">From the Source: <br/>Ethical Cooperatives</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">Sustainability isn't a buzzword for us; it's our survival. We reinvest 20% of all proceeds directly back into reforestation and educational scholarships within our harvest communities.</p>
+<ul class="space-y-6">
+<li class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-xl">verified_user</span>
+<div>
+<h4 class="font-bold text-primary">Fair Trade Guaranteed</h4>
+<p class="text-sm text-on-surface-variant">We pay 3x the market rate to ensure our harvesters thrive.</p>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-xl">spa</span>
+<div>
+<h4 class="font-bold text-primary">Regenerative Wild-Crafting</h4>
+<p class="text-sm text-on-surface-variant">Only 10% of any plant population is harvested to allow for natural regrowth.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Heritage Story Section -->
+<section class="py-24 bg-primary text-on-primary">
+<div class="max-w-4xl mx-auto px-8 text-center space-y-12">
+<h2 class="text-4xl lg:text-5xl font-bold font-headline">A Legacy Rooted in Truth</h2>
+<div class="h-1 w-24 bg-secondary mx-auto rounded-full"></div>
+<p class="text-xl lg:text-2xl font-light leading-relaxed italic opacity-90">
+            GreenCure was founded to preserve the botanical heritage of the West African highlands. We don't just sell remedies; we preserve stories, honor ancestors, and heal the body through the spirit of the earth.
+        </p>
+<button class="px-10 py-4 border border-white/30 rounded-full font-bold hover:bg-white/10 transition-all">Learn About Our Heritage</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-emerald-950 w-full pt-16 pb-8 font-['Inter'] leading-relaxed">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-bold text-emerald-900 dark:text-emerald-100 font-headline">GreenCure</div>
+<p class="text-sm text-emerald-800/80 dark:text-emerald-200/80">Ethically sourced botanical excellence from the heart of Cameroon’s highlands. Traditional medicine for the modern soul.</p>
+<div class="flex gap-4">
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-primary hover:text-secondary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Navigation</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Home</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Shop</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">About</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Information</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Heritage Story</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-emerald-800/80 dark:text-emerald-200/80 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">The Journal</h4>
+<p class="text-xs text-on-surface-variant">Subscribe to receive botanical insights and early access to rare harvests.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-surface-container border-none rounded-xl text-sm p-4 focus:ring-1 focus:ring-primary" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary py-3 rounded-xl font-bold text-sm">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-emerald-900/10">
+<div class="flex flex-col md:row justify-between items-center gap-4">
+<p class="text-xs text-emerald-800/80 dark:text-emerald-200/80">© 2024 GreenCure Cameroon. Ethically Sourced Botanical Excellence.</p>
+<div class="flex gap-6 text-xs text-emerald-800/60">
+<a href="#">Terms</a>
+<a href="#">Privacy</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

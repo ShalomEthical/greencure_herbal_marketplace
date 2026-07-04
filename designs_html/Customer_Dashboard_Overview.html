@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Dashboard | GreenCure Pharmacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#00452d",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f4",
+                        "primary-fixed": "#c1ecd4",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "outline-variant": "#c1c8c2",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002114",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#436a60",
+                        "secondary-fixed-dim": "#a6cfc3",
+                        "on-tertiary-fixed": "#002113",
+                        "on-secondary-fixed": "#00201a",
+                        "on-surface-variant": "#414844",
+                        "surface-dim": "#dcdad5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "outline": "#717973",
+                        "on-surface": "#1c1c19",
+                        "on-secondary-fixed-variant": "#274e45",
+                        "surface-container": "#f0ede9",
+                        "on-primary-container": "#86af99",
+                        "inverse-on-surface": "#f3f0eb",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary": "#002d1b",
+                        "on-background": "#1c1c19",
+                        "on-tertiary-fixed-variant": "#0c5136",
+                        "primary": "#012d1d",
+                        "surface-container-low": "#f6f3ee",
+                        "tertiary-fixed": "#b0f1cc",
+                        "surface-tint": "#3f6653",
+                        "tertiary-fixed-dim": "#94d4b1",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1b4332",
+                        "secondary-fixed": "#c1ebdf",
+                        "surface-container-high": "#ebe8e3",
+                        "surface-variant": "#e5e2dd",
+                        "inverse-surface": "#31302d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fcf9f4",
+                        "secondary": "#3f665c",
+                        "secondary-container": "#bee8dc",
+                        "on-tertiary-container": "#74b392",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#a5d0b9",
+                        "on-primary-fixed-variant": "#274e3d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#FCF9F4]/80 backdrop-blur-md shadow-sm flex justify-between items-center px-8 py-4 w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#012D1D] tracking-tight">GreenCure Pharmacy</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#012D1D] font-semibold border-b-2 border-[#012D1D] font-['Plus_Jakarta_Sans'] tracking-tight transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-[#3F665C] hover:text-[#012D1D] transition-colors duration-300 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Orders</a>
+<a class="text-[#3F665C] hover:text-[#012D1D] transition-colors duration-300 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Suppliers</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#3F665C] hover:text-[#012D1D] transition-all scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#3F665C] hover:text-[#012D1D] transition-all scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img alt="User profile" data-alt="close-up portrait of a serene woman with a natural look in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf9yieJz94PEkz3EhvcFc4jujgMdKcpTVgsWaNtOLPFPuk3xpg0JOFzUf__hu9pLlqLTdb_l-zbA7X_rvDZIOo7y0nFLxR7vkYi7rIEUi2LVRpJ2iVmlyZiK6UAkTyhUXgOUuvl3sPvxDg-T5ht1R3FGfMdO6sWZPStgbHWHQdNAuvYCwbD1umFUrrXhRusqDmUwehDb7lgTzeONJzvcS6vACmooOGPOCVQXbcd7-zouejuc0X1E6S9NbEepMt4uKEnNHm2WCWthw"/>
+</div>
+</div>
+</nav>
+<!-- Sidebar (Web only) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#F0EDE9] flex-col p-6 space-y-2 z-40 pt-24">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-extrabold text-[#012D1D]">GreenCure</h2>
+<p class="text-xs text-[#3F665C] font-medium uppercase tracking-wider">Botanical Pharmacy</p>
+</div>
+<nav class="flex flex-col space-y-1">
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:translate-x-1 transition-transform duration-300 rounded-xl hover:bg-[#E5E2DD]" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="font-medium text-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-[#FFFFFF] text-[#012D1D] rounded-xl shadow-sm transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-medium text-sm">Tracking</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:translate-x-1 transition-transform duration-300 rounded-xl hover:bg-[#E5E2DD]" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-medium text-sm">Messages</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:translate-x-1 transition-transform duration-300 rounded-xl hover:bg-[#E5E2DD]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium text-sm">Inventory</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:translate-x-1 transition-transform duration-300 rounded-xl hover:bg-[#E5E2DD]" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-medium text-sm">Sales</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 pt-24 pb-12 px-6 md:px-10">
+<!-- Hero Welcome -->
+<header class="mb-12">
+<h1 class="text-4xl font-extrabold text-primary mb-2 tracking-tight">Welcome back, Elena</h1>
+<p class="text-secondary body-lg">Your botanical wellness journey is thriving. You have 2 shipments arriving this week.</p>
+</header>
+<!-- Dashboard Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Active Order Tracking Widget -->
+<section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden shadow-[0_12px_32px_-4px_rgba(28,28,25,0.06)] border border-outline-variant/10">
+<div class="absolute -right-16 -top-16 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" data-icon="eco">eco</span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                            Order Tracking
+                        </h3>
+<span class="text-sm font-semibold px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full">In Transit</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden relative">
+<img alt="Botanical Order" class="object-cover w-full h-full" data-alt="macro photography of dried lavender bundles and glass apothecary jars on a rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIoBmc_xcWsGZAjT_kyXUbdXiLzulpsKawXehTZBd904r6ChvxhShGXSry7KjnFjdvv5DKN0bN3w8Fb6qOiYemsK_L6WhQbpWTB7bXbEmiESr-iTNy21HwcRgDms_G6vob4xKh9Er-4z-32JudNdkd2bQU6qMZRsKHj0QGZL-yLbYNL7ECFPsKvyyv-_Km_xGyad3GHEn80pGg3tLeNVAsdAbB5tAWkT37o-xszKh6zPMdC3BrBU_BNXMpDGdn8Gd6NjW9R-NBbWY"/>
+</div>
+<div class="flex-1 space-y-6">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Current Shipment</p>
+<h4 class="text-2xl font-bold text-primary">Artisan Herb Collector's Set</h4>
+<p class="text-on-surface-variant">Expected Delivery: Oct 14, 2023</p>
+</div>
+<!-- Delivery Stepper -->
+<div class="relative pt-4">
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-highest -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-0 w-2/3 h-0.5 bg-primary -translate-y-1/2"></div>
+<div class="flex justify-between relative">
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed"></div>
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed"></div>
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed"></div>
+<div class="w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-background"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold uppercase mt-3 text-on-surface-variant">
+<span>Placed</span>
+<span>Processed</span>
+<span class="text-primary">Shipped</span>
+<span>Delivered</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-semibold hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">View Full History</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity Timeline -->
+<section class="lg:col-span-4 bg-surface-container rounded-xl p-8 shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    Recent Activity
+                </h3>
+<div class="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-outline-variant/30">
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="check_circle">check_circle</span>
+</div>
+<p class="text-sm font-semibold text-on-surface">Consultation Completed</p>
+<p class="text-xs text-on-surface-variant">With Dr. Aris Thorne • 2h ago</p>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<p class="text-sm font-semibold text-on-surface">Order #GC-8821 Shipped</p>
+<p class="text-xs text-on-surface-variant">Botanical Tea Collection • Yesterday</p>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-tertiary" data-icon="rate_review">rate_review</span>
+</div>
+<p class="text-sm font-semibold text-on-surface">Review Posted</p>
+<p class="text-xs text-on-surface-variant">On 'Wild Elderberry Elixir' • 3 days ago</p>
+</div>
+</div>
+</section>
+<!-- Personalized Remedies Carousel -->
+<section class="lg:col-span-12 mt-4">
+<div class="flex justify-between items-end mb-6 px-2">
+<div>
+<h3 class="text-2xl font-bold text-primary">Personalized Remedies</h3>
+<p class="text-secondary">Based on your preference for adaptogenic immunity</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 hover:underline">
+                        Explore Full Library <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Remedy Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group hover:shadow-xl transition-shadow duration-500">
+<div class="h-48 overflow-hidden">
+<img alt="Elderberry Elixir" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="close-up of a dark glass bottle labeled elderberry elixir surrounded by fresh berries and forest leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc4zTZdEU_xjnPUwBBOG78awJ8qHma15iFDFNct5IrYgG7J_ueFoGNlFvSIrXVjtjpdHZSCMV6_1f1UiZvxNBsiLjgEVdc-kKclJPzUjzSyZmLaeTRib9ajxmSc1y0CGuzAGhyRvunml_FiwkFGrdWzfK548iDHP58aRqgK3CxF5nDAL4dPsMZwH6AWqVXueKlF5tlKtzjL9zsCzjgfDnxD0Sd7wX6uZkT-EyRzHmzYBiGerkXr9rXcYX0Vi1FfN_53Ta_FWroRZQ"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-lg font-bold text-primary">Wild Elderberry Elixir</h4>
+<span class="text-xs font-bold text-secondary uppercase bg-secondary-fixed px-2 py-0.5 rounded">Immunity</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">A potent concentration of wild-harvested elderberries and raw forest honey for seasonal support.</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">$32.00</span>
+<button class="p-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Remedy Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group hover:shadow-xl transition-shadow duration-500">
+<div class="h-48 overflow-hidden">
+<img alt="Holy Basil Tea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="top view of a ceramic tea cup filled with herbal infusion and fresh green leaves scattered on a linen surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexSOe1rZXD5QxjL54gwuOiT2tfa2nbgeQTfrUVXZdUSEWJPi8LKE7YeFnpruvWbtLcn22CBhXKewuW5kwItlxoIDhNtvK_G2prO4QbqpQR4JhdUfMCief-6-uNDHArng9pohivTjfUBRyZQUWCHiyYa_dm_CxofNMBfV1-Bokqsubv8AHKjzbGlbI_V9GHmr9__NueqWGIQNXUCErTjCaudCg3BY1GHDs8r89NNLsT2zgTpO_S37D5AHE7th08zeNAqGZsQZQEfo"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-lg font-bold text-primary">Holy Basil Stress Relief</h4>
+<span class="text-xs font-bold text-secondary uppercase bg-secondary-fixed px-2 py-0.5 rounded">Calm</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Adaptogenic Tulsi tea blended with lavender and rosehips for evening restorative rituals.</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">$24.00</span>
+<button class="p-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Remedy Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group hover:shadow-xl transition-shadow duration-500">
+<div class="h-48 overflow-hidden">
+<img alt="Arnica Balm" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="close-up of a hand dipping a finger into a small tin of organic green herbal salve with flowers in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-EKe-Y8fJ2ibY-dqI7mo85duG9mEY3h0nRIBi8zcph9Au0CySyrPA_tJQnyGnE6P4vHk4pXoHL-54BwvXUyGMfMOVExsn1QzzT2do1TGU0JT28XiN0jhf5jOT2eEpnkTZtkpT_mjN5J9yi0mO3e41XEUIYoCfIKv5U8uMiabhtIHSZHDB6mbryWs5tB8FAcVN_clQCMd12qHxYmHlsFuw9QjVnS4W0G1qOf8XCNXjkmnC8KiHJPnFCNb7NVxzHGAQYNISMdVZnvA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-lg font-bold text-primary">Mountain Arnica Balm</h4>
+<span class="text-xs font-bold text-secondary uppercase bg-secondary-fixed px-2 py-0.5 rounded">Recovery</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Soothing relief for joints and muscles using high-altitude arnica and cooling peppermint.</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">$28.00</span>
+<button class="p-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Supplier Messages Summary -->
+<section class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+<div class="bg-[#1B4332] text-on-primary rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute bottom-0 right-0 opacity-20 pointer-events-none">
+<img alt="Leaves" class="w-48 h-48 object-cover rounded-tl-full" data-alt="macro close-up of vibrant green monstera leaf texture with organic veins and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR9qWz82_Xd0wzXdZ8bWJxVypodtd5pS_gpbbzI3tPmAbABDq7sdyT1XJHwYEY73XxkJ1xTpza3F5iKjyQiIG_z5XLcr_0At5H6SVPIvfJvbsvUJ6m15SvPcJ8QMgLGeNIzvh2p1Pu6qugmec3Dqe009tOrPhhi71OatlUsg2I8JfV4_ItTy6gWaE2D3XVFXYa0770naEmaUZfIvOM7K0S5iwyg3AHmNFq6e7LC_MB7h3HeOQ8nQ8bykkypEyxdj_ohAitTcqfH5o"/>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                                Supplier Messages
+                            </h3>
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md text-xs font-bold">2 New</span>
+</div>
+<div class="space-y-4">
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-colors cursor-pointer border border-white/5">
+<div class="flex items-center gap-3 mb-2">
+<img alt="Supplier" class="w-8 h-8 rounded-full border border-white/20" data-alt="portrait of an elderly man with a kind smile wearing an apron in a greenhouse setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwH15esoD0J8yWLAFLF4V5Omof-pwbaWXOSSzdHNmN6vQ3kH2gqMlA2OmN8t66aafi5O0y_oWrZNlc5C3jJva3gXVD6ZCN8MDNhwKxtzAxl3gDwtO_1D_jhua2Ai0yAn862AcNQd9-IEV8_oitIpDZuMDsij9WOprEBfrMBweQZqYJ-VqcU5Tj19gSNOScb9olN3BFIYJwFmX2fmTcsrEJr4Nb58tlhGZLkaAWc1Y2ErFi9opl33hu9D1AAhddvq6OR788wCv2kg"/>
+<span class="font-bold text-sm">Riverwood Herbs</span>
+<span class="text-[10px] ml-auto opacity-60">15 min ago</span>
+</div>
+<p class="text-xs opacity-80 italic">"The latest batch of Ashwagandha root has just been harvested. Quality is exceptional this season..."</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-colors cursor-pointer border border-white/5">
+<div class="flex items-center gap-3 mb-2">
+<img alt="Supplier" class="w-8 h-8 rounded-full border border-white/20" data-alt="portrait of a woman with braided hair smiling in a sun-drenched flower field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLskLk2fSYh34hYyLh-nkowvJc8P-7OtHxMqCgUORG1jPgXUfB0nMSSyK1HLxBeGUQBBW-I1l6UPZVY3GAe6EphPJ85T2cu18uEKYQaIAmHsAhYrH_8eR2r1W9onsxVRVUPHs5x-uy8fa8pQdVE2Zdio4EN1J-pRLuNhdZ3spqxGiQPfm-0oAZQlRDNjPojh1UArTRQjUDRHRMnsGXzmVxf7POzK8LrmDUTm2io0UzW3Hnd14bwXR4sc7HM11U4EdevUka9LhczTY"/>
+<span class="font-bold text-sm">Highland Botanicals</span>
+<span class="text-[10px] ml-auto opacity-60">2h ago</span>
+</div>
+<p class="text-xs opacity-80 italic">"Your custom tincture blend is ready for bottling. Shall we proceed with the standard shipment?"</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Loyalty / Wellness Score Widget -->
+<div class="bg-surface-container-high rounded-2xl p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-bold text-primary mb-2">Wellness Rewards</h3>
+<p class="text-secondary text-sm mb-6">You're 250 points away from a free botanical consultation.</p>
+<div class="bg-background rounded-xl p-6 flex items-center gap-6 shadow-sm mb-6">
+<div class="relative w-20 h-20">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.19" stroke-dashoffset="56.55" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-primary text-xl">75%</div>
+</div>
+<div>
+<p class="text-2xl font-extrabold text-primary">1,750</p>
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Points Earned</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary rounded-full font-bold hover:bg-primary hover:text-on-primary transition-all duration-300">Redeem Points</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#FCF9F4]/90 backdrop-blur-md shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50 px-6 py-3 flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-[#012D1D]">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#3F665C]">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="text-[10px] font-medium">Orders</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#3F665C]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-[10px] font-medium">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#3F665C]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed right-6 bottom-20 md:bottom-10 z-50 w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl" data-icon="psychiatry">psychiatry</span>
+</button>
+</body></html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supplier Dashboard | GreenCure Pharmacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00452d",
+                    "on-secondary": "#ffffff",
+                    "background": "#fcf9f4",
+                    "primary-fixed": "#c1ecd4",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "outline-variant": "#c1c8c2",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#002114",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#436a60",
+                    "secondary-fixed-dim": "#a6cfc3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-secondary-fixed": "#00201a",
+                    "on-surface-variant": "#414844",
+                    "surface-dim": "#dcdad5",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fcf9f4",
+                    "outline": "#717973",
+                    "on-surface": "#1c1c19",
+                    "on-secondary-fixed-variant": "#274e45",
+                    "surface-container": "#f0ede9",
+                    "on-primary-container": "#86af99",
+                    "inverse-on-surface": "#f3f0eb",
+                    "surface-container-highest": "#e5e2dd",
+                    "tertiary": "#002d1b",
+                    "on-background": "#1c1c19",
+                    "on-tertiary-fixed-variant": "#0c5136",
+                    "primary": "#012d1d",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#b0f1cc",
+                    "surface-tint": "#3f6653",
+                    "tertiary-fixed-dim": "#94d4b1",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1b4332",
+                    "secondary-fixed": "#c1ebdf",
+                    "surface-container-high": "#ebe8e3",
+                    "surface-variant": "#e5e2dd",
+                    "inverse-surface": "#31302d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf9f4",
+                    "secondary": "#3f665c",
+                    "secondary-container": "#bee8dc",
+                    "on-tertiary-container": "#74b392",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a5d0b9",
+                    "on-primary-fixed-variant": "#274e3d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .headline-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .botanical-shadow {
+            box-shadow: 0 12px 32px -4px rgba(28, 28, 25, 0.06);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background-color: rgba(252, 249, 244, 0.8);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fcf9f4; }
+        ::-webkit-scrollbar-thumb { background: #e5e2dd; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#F0EDE9] flex flex-col p-6 space-y-2 z-40">
+<div class="mb-10 px-2">
+<h1 class="text-lg font-extrabold text-[#012D1D] headline-font leading-tight">GreenCure</h1>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Botanical Pharmacy</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 p-3 bg-[#FFFFFF] text-[#012D1D] rounded-xl shadow-sm transition-all scale-[0.98] font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">monitoring</span>
+<span>Sales</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">package_2</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span>Tracking</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span>Messages</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">pending_actions</span>
+<span>Incoming</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#3F665C] hover:bg-[#E5E2DD] hover:translate-x-1 transition-transform duration-300 rounded-xl font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span>Earnings</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-3 p-2 bg-surface-container-highest/30 rounded-2xl">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a professional female pharmacist with a friendly expression in a modern clinic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLltnPTdZwkIKKwfc6jcxplBSy8rmTkaAnnBeahd8mu8fM4aAvOC6ENvaLWv4S3Cg_UB90cq6w6Twv0k-L3iCHmgJ2fUnbOhzNAFao_IAJoWo33XAXrDo2dexLoSrmYOHClzUZqwIblDWhROrxMTozXpMRg-TlPZxOswqcVEPGTMGhmoRRpmmUOWtndq5nUlLAAVZRFUeU2rF8ZcxVXREo9YS99I8E0CJDlWV5A0MDOa8mlh_BPj_GDAe7XYpkrXIWSh59o-bcDcw"/>
+<div>
+<p class="text-xs font-bold text-primary">Dr. Aris Thorne</p>
+<p class="text-[10px] text-secondary">Senior Herbalist</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 left-64 z-50 glass-nav shadow-sm px-8 py-4 flex justify-between items-center">
+<div class="flex items-center bg-surface-container rounded-full px-4 py-2 w-96">
+<span class="material-symbols-outlined text-secondary mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder-secondary/60" placeholder="Search orders, herbs, or batches..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-secondary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-secondary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-primary headline-font">Supplier Dashboard</span>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="pt-24 p-8 space-y-8">
+<!-- Hero Header Section -->
+<section class="flex justify-between items-end">
+<div class="space-y-1">
+<h2 class="text-4xl font-extrabold text-primary headline-font tracking-tight">Morning, GreenCure.</h2>
+<p class="text-secondary body-lg">Your botanical exports are seeing a <span class="text-primary font-bold">12% increase</span> this month.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-full font-semibold text-sm flex items-center gap-2 botanical-shadow hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                        New Batch Entry
+                    </button>
+</div>
+</section>
+<!-- Top Stats Row (Asymmetric Bento) -->
+<section class="grid grid-cols-12 gap-6">
+<!-- Sales Performance Chart (Visual Simulation) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 rounded-[2rem] botanical-shadow relative overflow-hidden">
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h3 class="text-xl font-bold text-primary headline-font">Sales Performance</h3>
+<p class="text-xs text-secondary/70">Monthly revenue from dried herb &amp; elixir sales</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold rounded-full">REVENUE: $42,850.00</span>
+</div>
+</div>
+<!-- SVG Chart Simulation -->
+<div class="h-64 w-full flex items-end gap-4 px-2 relative z-10">
+<div class="flex-1 bg-surface-container rounded-t-xl transition-all hover:bg-primary-fixed group relative h-[40%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-bold text-primary">Mar</div>
+</div>
+<div class="flex-1 bg-surface-container rounded-t-xl transition-all hover:bg-primary-fixed group relative h-[55%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-bold text-primary">Apr</div>
+</div>
+<div class="flex-1 bg-surface-container rounded-t-xl transition-all hover:bg-primary-fixed group relative h-[45%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-bold text-primary">May</div>
+</div>
+<div class="flex-1 bg-primary-container rounded-t-xl transition-all group relative h-[85%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 text-[10px] font-bold text-primary">Jun (Active)</div>
+</div>
+<div class="flex-1 bg-surface-container rounded-t-xl transition-all hover:bg-primary-fixed group relative h-[60%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-bold text-primary">Jul</div>
+</div>
+</div>
+<!-- Decorative botanical background -->
+<div class="absolute -bottom-10 -right-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">potted_plant</span>
+</div>
+</div>
+<!-- Earnings Summary Card -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-primary-container text-on-primary p-8 rounded-[2rem] botanical-shadow flex-1 relative overflow-hidden">
+<span class="material-symbols-outlined absolute top-4 right-4 opacity-20 text-4xl">payments</span>
+<h3 class="text-sm font-bold uppercase tracking-widest opacity-70 mb-2">Total Earnings</h3>
+<div class="text-4xl font-extrabold headline-font mb-6">$12,490.80</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-xs">
+<span class="opacity-70">Cleared Payouts</span>
+<span class="font-bold">$8,210.00</span>
+</div>
+<div class="h-[1px] bg-on-primary/10"></div>
+<div class="flex justify-between items-center text-xs">
+<span class="opacity-70">Pending Settlement</span>
+<span class="font-bold">$4,280.80</span>
+</div>
+</div>
+<button class="mt-8 w-full py-3 bg-primary-fixed text-on-primary-fixed rounded-xl font-bold text-sm hover:bg-on-primary hover:text-primary transition-all">
+                            Withdraw Funds
+                        </button>
+</div>
+</div>
+</section>
+<!-- Bottom Row: Inventory & Incoming Orders -->
+<section class="grid grid-cols-12 gap-8">
+<!-- Inventory Management Section -->
+<div class="col-span-12 lg:col-span-5 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-bold text-primary headline-font">Inventory</h3>
+<a class="text-secondary text-sm font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<!-- Inventory Item 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="w-16 h-16 bg-surface-container rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of dark purple wild elderberries in a rustic wooden bowl with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArMiiraTb9wBoFcVwZn38jfc20OYqdvNpe_TKSWqSNqqpCg7nBAELyjvyEn0tjzpXs8PCAIfO8I9iWRvtqHD-d5RTR9BDdbL9Br71V7AtrZZBm03mu5vXndLhK7gaLcXIn4LptgQspsWMm9pvvN3ztmFu071jObtqAFFQipWM3M60Jy_SlMs90qlA0-caoR5en4mo4WzOPYeBblw6iIv2HCMbv49dIgSFXdEqxMjjHPumjzJCrtIXUEJVE1Pkm7NOTstv97xI0_YY"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Wild Elderberry Elixir</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error w-[15%] h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-error">CRITICAL</span>
+</div>
+<p class="text-[10px] text-secondary mt-1">14 units remaining • High Demand</p>
+</div>
+<button class="p-2 bg-surface-container hover:bg-primary hover:text-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+<!-- Inventory Item 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="w-16 h-16 bg-surface-container rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="fresh vibrant holy basil leaves with water droplets in soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt9j5gO-3cgr2GQ77NhOnNU1DZMoyNylCwieGt2Cs8Mv2mvQxLWbsDuQ_0-AuT6awb_rFULm_CqB8mkDEjy5MNqcjrY6N8S-UQcsUhrB8-Zk3s_UiUE-Ri7SCyVBjQBmC5ZtMV_eK0Y357jbBa3RUcbMhDwzeUqBbUEV2d5pETXSesoK-yZhD6qtb1_txyn9VwdZ9647FpsncBlH7Gdme1v9131IVyIxQ9_7m3fTqLyCCCkxnAdmenQj0_CSjzw2Q2fTEF_HiYkm0"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Holy Basil Extract</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary w-[78%] h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">STABLE</span>
+</div>
+<p class="text-[10px] text-secondary mt-1">142 units remaining • Seasonal Stock</p>
+</div>
+<button class="p-2 bg-surface-container hover:bg-primary hover:text-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Incoming Orders List -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-bold text-primary headline-font">Incoming Orders</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">3 New Orders</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden botanical-shadow">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] font-bold text-secondary uppercase tracking-widest">Buyer / Item</th>
+<th class="px-6 py-4 text-[10px] font-bold text-secondary uppercase tracking-widest">Qty</th>
+<th class="px-6 py-4 text-[10px] font-bold text-secondary uppercase tracking-widest">Status</th>
+<th class="px-6 py-4 text-[10px] font-bold text-secondary uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Order Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-xs">AM</div>
+<div>
+<p class="text-sm font-bold text-primary">Apothecary Main</p>
+<p class="text-[10px] text-secondary">Dried Lavender Stems (Grade A)</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-primary">25 kg</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors" title="Message Buyer">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+</button>
+<button class="px-4 py-1.5 bg-primary text-on-primary text-[10px] font-bold rounded-full hover:bg-primary-container transition-all">
+                                                Fulfill
+                                            </button>
+</div>
+</td>
+</tr>
+<!-- Order Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">EH</div>
+<div>
+<p class="text-sm font-bold text-primary">EcoHealth Dist.</p>
+<p class="text-[10px] text-secondary">Cold-Pressed Ashwagandha Oil</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-primary">12 Units</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container text-secondary text-[10px] font-bold rounded-full">PROCESSING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors" title="Message Buyer">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+</button>
+<button class="px-4 py-1.5 border border-primary/20 text-primary text-[10px] font-bold rounded-full hover:bg-primary/5 transition-all">
+                                                Details
+                                            </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+<!-- Decorative Floating Elements -->
+<div class="fixed bottom-12 right-12 flex flex-col gap-4">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full botanical-shadow flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</button>
+</div>
+</main>
+</body></html>

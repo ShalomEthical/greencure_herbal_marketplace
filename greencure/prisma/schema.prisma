@@ -1,0 +1,80 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  password      String
+  role          String          @default("CUSTOMER") // CUSTOMER, SUPPLIER, DELIVERY_AGENT, ADMIN
+  approved      Boolean         @default(true) // Set to false for new suppliers until admin approves
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  
+  // Relations
+  products      Product[]       @relation("SupplierProducts")
+  orders        Order[]         @relation("CustomerOrders")
+  deliveries    Order[]         @relation("AgentDeliveries")
+}
+
+model Product {
+  id            String      @id @default(cuid())
+  name          String
+  description   String
+  price         Float
+  image         String
+  category      String      // Teas, Salves, Oils, Tinctures
+  stock         Int         @default(10)
+  supplierId    String
+  supplier      User        @relation("SupplierProducts", fields: [supplierId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  // Relations
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  userId          String
+  user            User        @relation("CustomerOrders", fields: [userId], references: [id], onDelete: Cascade)
+  status          String      @default("PENDING") // PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED, FLAGGED
+  total           Float
+  address         String
+  phone           String
+  deliveryAgentId String?
+  deliveryAgent   User?       @relation("AgentDeliveries", fields: [deliveryAgentId], references: [id], onDelete: SetNull)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  // Relations
+  items           OrderItem[]
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+  price     Float
+}
+
+model Consultation {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  date      String
+  time      String
+  message   String
+  status    String   @default("PENDING") // PENDING, COMPLETED
+  createdAt DateTime @default(now())
+}
