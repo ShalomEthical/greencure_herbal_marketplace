@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, ChevronRight, ChevronLeft, Loader2, ChevronsLeft, ChevronsRight, X } from "lucide-react";
@@ -128,7 +128,7 @@ function Pagination({
   );
 }
 
-export default function ShopPage() {
+function ShopPageContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams?.get("category") || "All";
 
@@ -408,5 +408,13 @@ export default function ShopPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-cream"><Loader2 className="animate-spin text-forest-700" size={32} /></div>}>
+      <ShopPageContent />
+    </Suspense>
   );
 }
