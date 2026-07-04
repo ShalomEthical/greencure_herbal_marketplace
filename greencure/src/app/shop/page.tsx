@@ -38,7 +38,7 @@ interface Product {
   image: string;
   category: string;
   stock: number;
-  supplier?: { name: string };
+  supplier?: { name: string | null };
 }
 
 function Pagination({
